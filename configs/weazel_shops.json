@@ -1,0 +1,8 @@
+[
+  {
+    "name": "Kiosque Central",
+    "coords": { "x": 123.4, "y": -456.7, "z": 28.0 },
+    "radius": 2.0,
+    "blip": true
+  }
+]

@@ -1,0 +1,247 @@
+:root {
+  --bg: radial-gradient(circle at top, #40311e 0%, #1a1410 42%, #090807 100%);
+  --panel: rgba(18, 14, 11, 0.92);
+  --card: rgba(35, 27, 21, 0.92);
+  --line: rgba(246, 202, 111, 0.18);
+  --text: #f7eedf;
+  --muted: #d6c5ae;
+  --accent: #f5b544;
+  --accent-strong: #ff7f32;
+  --danger: #f16f5c;
+  --shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Georgia, "Times New Roman", serif;
+  background: transparent;
+  color: var(--text);
+}
+
+body.page-hidden {
+  display: none;
+}
+
+.panel {
+  min-height: 100vh;
+  padding: 4vh 4vw;
+  background: var(--bg);
+}
+
+.import-panel,
+.reader-panel {
+  display: grid;
+  gap: 1.5rem;
+  align-content: start;
+}
+
+.hero,
+.card {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.hero {
+  padding: 1rem 0 0;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+}
+
+.controls-card,
+.reader-toolbar {
+  padding: 1.5rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.5rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.24rem;
+  font-size: 0.78rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 0.95;
+}
+
+.subtitle {
+  margin: 0.7rem 0 0;
+  color: var(--muted);
+  max-width: 56rem;
+}
+
+.meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.meta-grid article {
+  padding: 1rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.meta-label {
+  display: block;
+  margin-bottom: 0.4rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.upload-dropzone {
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  border: 1px dashed rgba(245, 181, 68, 0.55);
+  border-radius: 22px;
+  background: linear-gradient(135deg, rgba(255, 127, 50, 0.08), rgba(245, 181, 68, 0.18));
+  text-align: center;
+  cursor: pointer;
+  transition: transform 180ms ease, border-color 180ms ease;
+}
+
+.upload-dropzone:hover {
+  transform: translateY(-2px);
+  border-color: rgba(245, 181, 68, 0.85);
+}
+
+.upload-dropzone input {
+  display: none;
+}
+
+.upload-dropzone span {
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.upload-dropzone small {
+  margin-top: 0.45rem;
+  color: var(--muted);
+}
+
+.file-info {
+  margin: 1rem 0;
+  color: var(--muted);
+}
+
+.preview-wrapper,
+.reader-viewport {
+  overflow: auto;
+  border-radius: 22px;
+  background:
+    linear-gradient(45deg, rgba(255,255,255,0.02) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(255,255,255,0.02) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.02) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.02) 75%);
+  background-size: 24px 24px;
+  background-position: 0 0, 0 12px, 12px -12px, -12px 0;
+  min-height: 42vh;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.preview-wrapper {
+  display: grid;
+  place-items: center;
+  padding: 1.25rem;
+}
+
+.preview-wrapper img,
+.reader-viewport img {
+  max-width: 100%;
+  height: auto;
+  display: none;
+  transform-origin: top center;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.button-row.compact {
+  justify-content: flex-end;
+}
+
+button {
+  border: none;
+  border-radius: 999px;
+  padding: 0.9rem 1.35rem;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 180ms ease, opacity 180ms ease, filter 180ms ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+button.primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  color: #24170b;
+}
+
+button.secondary {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text);
+}
+
+.status-line {
+  margin: 1rem 0 0;
+  min-height: 1.5rem;
+  color: var(--muted);
+}
+
+.status-line.error {
+  color: var(--danger);
+}
+
+.reader-stage {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.reader-viewport {
+  max-height: 76vh;
+  padding: 1rem;
+}
+
+@media (max-width: 768px) {
+  .panel {
+    padding: 2vh 3vw;
+  }
+
+  .controls-card,
+  .reader-toolbar,
+  .reader-stage {
+    padding: 1rem;
+  }
+
+  .reader-viewport {
+    max-height: 68vh;
+  }
+}

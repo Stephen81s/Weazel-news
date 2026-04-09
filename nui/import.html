@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weazel News Import</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-hidden">
+  <main id="importView" class="panel import-panel">
+    <section class="hero">
+      <p class="eyebrow">Weazel News Studio</p>
+      <h1>Importer un journal</h1>
+      <p class="subtitle">Chargez une une PNG/JPG, verifiez l apercu puis publiez le numero du jour.</p>
+    </section>
+
+    <section class="card controls-card">
+      <div class="meta-grid">
+        <article>
+          <span class="meta-label">Taille max</span>
+          <strong id="maxFileSize">5 MB</strong>
+        </article>
+        <article>
+          <span class="meta-label">Resolution conseillee</span>
+          <strong id="recommendedResolution">1080x1920</strong>
+        </article>
+      </div>
+
+      <label for="journalFile" class="upload-dropzone">
+        <input id="journalFile" type="file" accept=".png,.jpg,.jpeg,image/png,image/jpeg">
+        <span>Importer un journal</span>
+        <small>Formats autorises : PNG et JPG</small>
+      </label>
+
+      <div class="file-info">
+        <p id="fileName">Aucun fichier selectionne.</p>
+        <p id="fileResolution">Resolution : inconnue</p>
+      </div>
+
+      <div class="preview-wrapper">
+        <img id="importPreview" alt="Apercu du journal">
+      </div>
+
+      <div class="button-row">
+        <button id="publishButton" class="primary" disabled>Publier</button>
+        <button id="closeImportButton" class="secondary">Fermer</button>
+      </div>
+
+      <p id="importStatus" class="status-line">Selectionnez un fichier pour commencer.</p>
+    </section>
+  </main>
+
+  <main id="readerView" class="panel reader-panel page-hidden">
+    <section class="reader-toolbar card">
+      <div>
+        <p class="eyebrow">Edition du jour</p>
+        <h1 id="readerTitle">Weazel News</h1>
+        <p id="readerMeta" class="subtitle">Aucun journal charge.</p>
+      </div>
+
+      <div class="button-row compact">
+        <button id="zoomOutButton" class="secondary">-</button>
+        <button id="zoomInButton" class="secondary">+</button>
+        <button id="closeReaderButton" class="primary">Fermer</button>
+      </div>
+    </section>
+
+    <section class="reader-stage card">
+      <div id="readerViewport" class="reader-viewport">
+        <img id="readerImage" alt="Journal Weazel News">
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

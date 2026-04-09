@@ -1,0 +1,253 @@
+🟥 PROMPT ULTIME — WEAZEL NEWS SYSTEM (À COLLER TEL QUEL DANS L’IA)
+Tu dois générer un système complet Weazel News pour un serveur RP.
+Tu dois produire :
+
+tout le code client
+
+tout le code serveur
+
+toutes les NUI
+
+tous les fichiers de configuration séparés
+
+tous les logs détaillés
+
+tous les commentaires
+
+toutes les vérifications
+
+toutes les commandes SQL dans un fichier séparé
+
+Tu dois respecter EXACTEMENT les spécifications suivantes :
+
+🟥 1. FREECAM — SPÉCIFICATIONS FONCTIONNELLES
+✔ 1.1 Accès configurable via fichier séparé
+Créer un fichier séparé :
+freecam_config.json (ou .lua selon le framework)
+
+Il doit contenir :
+
+Code
+FreecamByJob = true/false
+FreecamJobs = ["journaliste", "admin"]
+
+FreecamByPlayer = true/false
+FreecamWhitelist = ["license:xxxx", "steam:xxxx"]
+
+FreecamEveryone = false
+
+FreecamMaxDistance = 100
+FreecamMinSpeed = 0.05
+FreecamMaxSpeed = 20
+
+POVEnabled = true
+FiltersEnabled = true
+✔ 1.2 Règles de la freecam
+Aucun prop dans la main
+
+Le joueur peut bouger librement
+
+Le joueur peut faire des emotes
+
+La caméra est indépendante
+
+Distance max configurable (0–100 m)
+
+Vitesse variable (0.05 → 20 m/s)
+
+POV activables/désactivables
+
+Filtres activables/désactivables
+
+Audio basé sur le joueur
+
+Logs détaillés pour chaque activation/désactivation
+
+🟥 2. JOURNAL — IMPORT PNG/JPG (HORS‑GAME)
+✔ 2.1 Le journaliste crée son journal hors‑game
+Photoshop / Canva / GIMP / etc.
+
+Export PNG ou JPG
+
+Résolution libre
+
+Poids max configurable
+
+✔ 2.2 Import dans le jeu
+Créer une NUI avec :
+
+bouton “Importer un journal”
+
+sélection fichier PNG/JPG depuis le PC
+
+aperçu
+
+bouton “Publier”
+
+✔ 2.3 Stockage
+stocker l’image en base64 ou fichier
+
+générer un ID unique
+
+logs détaillés
+
+🟥 3. POINTS DE VENTE — FICHIER SÉPARÉ
+Créer un fichier séparé :
+weazel_shops.json
+
+Contenu :
+
+Code
+[
+  {
+    "name": "Kiosque Central",
+    "coords": { "x": 123.4, "y": -456.7, "z": 28.0 },
+    "radius": 2.0,
+    "blip": true
+  }
+]
+✔ Le code doit :
+charger ce fichier
+
+créer les zones
+
+créer les blips
+
+gérer l’achat du journal
+
+logs détaillés
+
+🟥 4. CONFIG GÉNÉRALE — FICHIER SÉPARÉ
+Créer un fichier :
+weazel_config.json
+
+Contenu :
+
+Code
+JournalPrice = 50
+MaxFileSizeMB = 5
+RecommendedResolution = "1080x1920"
+EnableArchive = true
+🟥 5. LECTURE DU JOURNAL — NUI
+Créer une NUI qui :
+
+affiche l’image PNG/JPG
+
+zoom possible
+
+scroll si nécessaire
+
+bouton fermer
+
+logs d’ouverture/fermeture
+
+🟥 6. SQL — FICHIER SÉPARÉ
+Créer un fichier séparé :
+weazel_news.sql
+
+Il doit contenir toutes les commandes SQL nécessaires, prêtes à copier‑coller.
+
+Exemple logique :
+
+Code
+CREATE TABLE weazel_journals (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  author VARCHAR(50),
+  date DATETIME,
+  image LONGTEXT,
+  resolution VARCHAR(20),
+  filename VARCHAR(100)
+);
+🟥 7. LOGS — OBLIGATOIRES
+Chaque action doit générer un log clair :
+
+activation freecam
+
+désactivation freecam
+
+changement de vitesse
+
+changement POV
+
+changement filtre
+
+import journal
+
+publication journal
+
+achat journal
+
+lecture journal
+
+Format recommandé :
+
+Code
+[WEAZEL] Freecam activée par <player>
+[WEAZEL] Journal importé : <filename> par <player>
+🟥 8. COMMENTAIRES — OBLIGATOIRES
+Chaque fonction doit être commentée :
+
+rôle
+
+paramètres
+
+retour
+
+comportement
+
+sécurité
+
+🟥 9. STRUCTURE DU PROJET
+L’IA doit générer :
+
+Code
+/weazel_news
+    /client
+        freecam.lua
+        nui_reader.lua
+    /server
+        freecam_permissions.lua
+        journal_import.lua
+        journal_publish.lua
+        journal_sales.lua
+    /configs
+        freecam_config.json
+        weazel_shops.json
+        weazel_config.json
+    /nui
+        import.html
+        reader.html
+        styles.css
+        script.js
+    /sql
+        weazel_news.sql
+🟥 10. RÈGLES DE CODAGE
+code propre
+
+commentaires obligatoires
+
+logs obligatoires
+
+aucune donnée codée en dur
+
+tout configurable via fichiers séparés
+
+SQL dans un fichier séparé
+
+aucune erreur possible
+
+vérifier tous les formats PNG/JPG
+
+vérifier la taille max
+
+vérifier les permissions freecam
+
+vérifier les permissions publication
+
+🟥 INSTRUCTION FINALE POUR L’IA
+Génère tout le code complet du système Weazel News selon les spécifications ci‑dessus.
+Respecte strictement la structure, les fichiers séparés, les logs, les commentaires et le SQL.
+Aucune omission.
+Aucune interprétation.
+Aucune simplification.
+Tu dois produire un système complet, fonctionnel, modulaire, propre et sans erreur.

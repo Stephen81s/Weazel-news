@@ -1,0 +1,12 @@
+{
+  "FreecamByJob": true,
+  "FreecamJobs": ["journaliste", "admin"],
+  "FreecamByPlayer": true,
+  "FreecamWhitelist": ["license:xxxx", "steam:xxxx"],
+  "FreecamEveryone": true,
+  "FreecamMaxDistance": 100,
+  "FreecamMinSpeed": 0.05,
+  "FreecamMaxSpeed": 20,
+  "POVEnabled": true,
+  "FiltersEnabled": true
+}
