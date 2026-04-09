@@ -5,9 +5,9 @@
   "EnableArchive": true,
   "PublishByJob": true,
   "PublishJobs": ["journaliste", "admin"],
-  "PublishByPlayer": false,
+  "PublishByPlayer": true,
   "PublishWhitelist": ["license:xxxx", "steam:xxxx"],
-  "PublishEveryone": false,
+  "PublishEveryone": true,
   "Commands": {
     "Freecam": "weazelcam",
     "Import": "weazelimport",

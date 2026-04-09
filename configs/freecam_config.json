@@ -5,7 +5,7 @@
   "FreecamWhitelist": ["license:xxxx", "steam:xxxx"],
   "FreecamEveryone": true,
   "FreecamMaxDistance": 100,
-  "FreecamMinSpeed": 0.05,
+  "FreecamMinSpeed": 0.01,
   "FreecamMaxSpeed": 20,
   "POVEnabled": true,
   "FiltersEnabled": true
